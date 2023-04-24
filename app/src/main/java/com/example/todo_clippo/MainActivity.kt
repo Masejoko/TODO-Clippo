@@ -10,7 +10,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.todo_clippo.Adapter.ToDoAdapter
 import com.example.todo_clippo.utils.AppDatabase
 import com.example.todo_clippo.utils.TaskViewModel
-import com.example.todo_clippo.utils.ToDoDao
+import org.koin.androidx.viewmodel.ext.android.viewModel
 
 /**
  * MainActivity is the main activity of the application, responsible for displaying the list of tasks,
@@ -19,9 +19,7 @@ import com.example.todo_clippo.utils.ToDoDao
 class MainActivity : AppCompatActivity(), DialogCloseListener {
 
     // Variables for the database, DAO, ViewModel, and adapter
-    private lateinit var appDatabase: AppDatabase
-    internal val toDoDao: ToDoDao by lazy { appDatabase.toDoDao() }
-    private val viewModel: TaskViewModel by viewModels { TaskViewModelFactory(toDoDao) }
+    private val viewModel: TaskViewModel by viewModel ()
     private lateinit var adapter: ToDoAdapter
 
     /**
@@ -30,9 +28,6 @@ class MainActivity : AppCompatActivity(), DialogCloseListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        // Initialize the database
-        appDatabase = AppDatabase.getInstance(this)
 
         // Set up the RecyclerView
         val recyclerView = findViewById<RecyclerView>(R.id.tasksRecyclerView)

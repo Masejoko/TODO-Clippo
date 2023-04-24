@@ -11,11 +11,11 @@ import android.widget.EditText
 import androidx.core.content.ContextCompat
 import androidx.core.view.WindowCompat
 import androidx.core.widget.addTextChangedListener
-import androidx.fragment.app.viewModels
+import androidx.fragment.app.activityViewModels
 import com.example.todo_clippo.model.ToDoModel
 import com.example.todo_clippo.utils.TaskViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-
+import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 /**
  * AddNewTask is a BottomSheetDialogFragment for adding or updating tasks.
  */
@@ -35,7 +35,7 @@ class AddNewTask : BottomSheetDialogFragment() {
 
     private lateinit var newTaskText: EditText
     private lateinit var newTaskSaveButton: Button
-    private val viewModel: TaskViewModel by viewModels { TaskViewModelFactory((activity as MainActivity).toDoDao) }
+    private val viewModel:TaskViewModel by activityViewModels()
 
     private var isUpdate = false
     private var taskId = -1
