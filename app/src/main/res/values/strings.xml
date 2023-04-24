@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TODO-Clippo</string>
+    <color name="turquoise">#0B5353</color>
+    <string name="save">Save</string>
+    <string name="new_task">New Task</string>
+    <string name="tasks">Tasks</string>
+</resources>
