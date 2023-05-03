@@ -13,6 +13,13 @@ android {
         enabled = true
     }
 
+    testOptions {
+        unitTests.all {
+//            useTestNG()
+//            includeAndroidResources = true
+        }
+    }
+
     defaultConfig {
         applicationId "com.example.todo_clippo"
         minSdk 24
@@ -73,4 +80,22 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.1"
     implementation "androidx.lifecycle:lifecycle-livedata-ktx:2.6.1"
     implementation 'org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4'
+
+    // Test dependencies
+//    testImplementation 'org.testng:testng:7.4.0'
+    testImplementation 'androidx.arch.core:core-testing:2.2.0'
+    testImplementation 'org.mockito:mockito-core:3.11.2'
+    testImplementation 'io.insert-koin:koin-test:3.1.2'
+    testImplementation 'org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.4'
+    testImplementation "androidx.room:room-testing:$room_version"
+
+    // may remove
+    testImplementation 'androidx.test.ext:junit:1.1.5'
+    testImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    testImplementation 'androidx.test:core:1.5.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-idling-resource:3.5.1'
+
+    testImplementation 'org.robolectric:robolectric:4.6.1'
+    androidTestImplementation 'androidx.test:runner:1.5.2'
+    androidTestImplementation 'androidx.test:rules:1.5.0'
 }
