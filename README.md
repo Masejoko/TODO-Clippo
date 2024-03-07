@@ -1,7 +1,7 @@
 # TODOClippo Project
 
 This Project is based on Mohit Singh's implementation of the "Do-It" App and serves as a personal practice for app development.  
-TODOClippo is a task management application, meticulously adapted from its [original Java implementation](https://github.com/msindev/Do-It)  to Kotlin, leveraging modern Android development practices and technologies.  
+TODOClippo is a task management application, adapted from its [original Java implementation](https://github.com/msindev/Do-It)  to Kotlin, leveraging modern Android development practices and technologies.  
 This project showcases the use of Kotlin Coroutines for efficient asynchronous programming, Jetpack libraries for robust application architecture, and Koin for dependency injection, alongside comprehensive testing with unit and Espresso tests.
 
 ## Key Features
